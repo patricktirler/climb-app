@@ -1,0 +1,25 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Personal data - never commit (the live database lives in Google Drive)
+climb_data.json
+ClimbData*.json
+*.clmb
+Backups/
+*.tmp
+# real names / home places used by the one-time migrations
+migrate_private.json
+
+# Credentials - never commit
+client_secret*.json
+*.pem
+.env
+
+# Logs / editor / OS
+error.log
+.vscode/
+.idea/
+Thumbs.db

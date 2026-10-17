@@ -1,0 +1,1816 @@
+{
+ "order": [
+  "climbing_days",
+  "sport_routes",
+  "alpine_climbs",
+  "mountain_tours",
+  "training_sessions",
+  "cycling",
+  "paragliding",
+  "trips",
+  "competitions",
+  "body_metrics",
+  "notes"
+ ],
+ "kinds": {
+  "climbing_days": {
+   "label": "Climbing day",
+   "plural": "Climbing days",
+   "color": "#c62f3e",
+   "fields": [
+    {
+     "key": "date",
+     "label": "Date",
+     "type": "date",
+     "required": true
+    },
+    {
+     "key": "country",
+     "label": "Country",
+     "type": "choice"
+    },
+    {
+     "key": "region",
+     "label": "Region",
+     "type": "choice"
+    },
+    {
+     "key": "discipline",
+     "label": "Discipline",
+     "type": "choice",
+     "choices": [
+      "Sportklettern",
+      "Boulder",
+      "Trad"
+     ]
+    },
+    {
+     "key": "area",
+     "label": "Climbing area",
+     "type": "choice",
+     "required": true
+    },
+    {
+     "key": "crag",
+     "label": "Crag",
+     "type": "choice"
+    },
+    {
+     "key": "sector",
+     "label": "Sector",
+     "type": "choice"
+    },
+    {
+     "key": "gps",
+     "label": "GPS position",
+     "type": "gps"
+    },
+    {
+     "key": "partner",
+     "label": "Partner",
+     "type": "partners"
+    },
+    {
+     "key": "info",
+     "label": "Notes",
+     "type": "multiline"
+    }
+   ],
+   "cascade": {
+    "chain": [
+     "country",
+     "region",
+     "area",
+     "crag",
+     "sector"
+    ],
+    "pools": {
+     "country": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "region": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "area": {
+      "kinds": [
+       "climbing_days",
+       "sport_routes"
+      ],
+      "catalogs": [
+       "climbing"
+      ]
+     },
+     "crag": {
+      "kinds": [
+       "climbing_days",
+       "sport_routes"
+      ],
+      "catalogs": [
+       "climbing"
+      ]
+     },
+     "sector": {
+      "kinds": [
+       "climbing_days",
+       "sport_routes"
+      ],
+      "catalogs": [
+       "climbing"
+      ]
+     }
+    }
+   }
+  },
+  "sport_routes": {
+   "label": "Route (tick list)",
+   "plural": "Tick list",
+   "color": "#f08ab4",
+   "fields": [
+    {
+     "key": "date",
+     "label": "Date",
+     "type": "date",
+     "required": true
+    },
+    {
+     "key": "country",
+     "label": "Country",
+     "type": "choice"
+    },
+    {
+     "key": "region",
+     "label": "Region",
+     "type": "choice"
+    },
+    {
+     "key": "discipline",
+     "label": "Discipline",
+     "type": "choice",
+     "choices": [
+      "Sportklettern",
+      "Trad",
+      "Boulder"
+     ]
+    },
+    {
+     "key": "name",
+     "label": "Route name",
+     "type": "text",
+     "required": true
+    },
+    {
+     "key": "grade",
+     "label": "Grade",
+     "type": "choice",
+     "choices": [
+      "5a",
+      "5a+",
+      "5b",
+      "5b+",
+      "5c",
+      "5c+",
+      "6a",
+      "6a+",
+      "6b",
+      "6b+",
+      "6c",
+      "6c+",
+      "7a",
+      "7a+",
+      "7b",
+      "7b+",
+      "7c",
+      "7c+",
+      "8a",
+      "8a+",
+      "8b",
+      "8b+",
+      "8c",
+      "8c+",
+      "9a",
+      "9a+",
+      "9b",
+      "9b+",
+      "9c",
+      "3",
+      "3+",
+      "3+/4-",
+      "4-",
+      "4",
+      "4+",
+      "4+/5-",
+      "5-",
+      "5",
+      "5+",
+      "5+/6-",
+      "6-",
+      "6",
+      "6+",
+      "6+/7-",
+      "7-",
+      "7",
+      "7+",
+      "7+/8-",
+      "8-",
+      "8",
+      "8+",
+      "8+/9-",
+      "9-",
+      "9",
+      "9+",
+      "9+/10-",
+      "10-",
+      "10",
+      "10+",
+      "10+/11-",
+      "11-",
+      "11",
+      "11+",
+      "11+/12-",
+      "12-",
+      "12"
+     ]
+    },
+    {
+     "key": "attempts",
+     "label": "Ascent style",
+     "type": "choice",
+     "choices": [
+      "onsight",
+      "flash",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "10+"
+     ]
+    },
+    {
+     "key": "area",
+     "label": "Climbing area",
+     "type": "choice"
+    },
+    {
+     "key": "crag",
+     "label": "Crag",
+     "type": "choice"
+    },
+    {
+     "key": "sector",
+     "label": "Sector",
+     "type": "choice"
+    },
+    {
+     "key": "first_ascent",
+     "label": "First ascent",
+     "type": "bool"
+    },
+    {
+     "key": "rating",
+     "label": "Rating",
+     "type": "rating",
+     "maximum": 100000,
+     "minimum": 0,
+     "step": 1
+    },
+    {
+     "key": "gps",
+     "label": "GPS position",
+     "type": "gps"
+    },
+    {
+     "key": "info",
+     "label": "Notes",
+     "type": "multiline"
+    }
+   ],
+   "cascade": {
+    "chain": [
+     "country",
+     "region",
+     "area",
+     "crag",
+     "sector"
+    ],
+    "pools": {
+     "country": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "region": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "area": {
+      "kinds": [
+       "climbing_days",
+       "sport_routes"
+      ],
+      "catalogs": [
+       "climbing"
+      ]
+     },
+     "crag": {
+      "kinds": [
+       "climbing_days",
+       "sport_routes"
+      ],
+      "catalogs": [
+       "climbing"
+      ]
+     },
+     "sector": {
+      "kinds": [
+       "climbing_days",
+       "sport_routes"
+      ],
+      "catalogs": [
+       "climbing"
+      ]
+     }
+    }
+   }
+  },
+  "alpine_climbs": {
+   "label": "Alpine climb",
+   "plural": "Alpine climbs",
+   "color": "#3a86e0",
+   "fields": [
+    {
+     "key": "date",
+     "label": "Date",
+     "type": "date",
+     "required": true
+    },
+    {
+     "key": "date_to",
+     "label": "Until",
+     "type": "date"
+    },
+    {
+     "key": "country",
+     "label": "Country",
+     "type": "choice"
+    },
+    {
+     "key": "region",
+     "label": "Region",
+     "type": "choice"
+    },
+    {
+     "key": "range",
+     "label": "Mountain range",
+     "type": "choice"
+    },
+    {
+     "key": "mountain",
+     "label": "Mountain",
+     "type": "choice"
+    },
+    {
+     "key": "name",
+     "label": "Route name",
+     "type": "text",
+     "required": true
+    },
+    {
+     "key": "type",
+     "label": "Type",
+     "type": "choice",
+     "choices": [
+      "Alpinklettertour",
+      "Mehrseillängen",
+      "Eisklettern",
+      "Kombiniert"
+     ]
+    },
+    {
+     "key": "grade",
+     "label": "Grade (rock)",
+     "type": "choice",
+     "choices": [
+      "5a",
+      "5a+",
+      "5b",
+      "5b+",
+      "5c",
+      "5c+",
+      "6a",
+      "6a+",
+      "6b",
+      "6b+",
+      "6c",
+      "6c+",
+      "7a",
+      "7a+",
+      "7b",
+      "7b+",
+      "7c",
+      "7c+",
+      "8a",
+      "8a+",
+      "8b",
+      "8b+",
+      "8c",
+      "8c+",
+      "9a",
+      "9a+",
+      "9b",
+      "9b+",
+      "9c",
+      "3",
+      "3+",
+      "3+/4-",
+      "4-",
+      "4",
+      "4+",
+      "4+/5-",
+      "5-",
+      "5",
+      "5+",
+      "5+/6-",
+      "6-",
+      "6",
+      "6+",
+      "6+/7-",
+      "7-",
+      "7",
+      "7+",
+      "7+/8-",
+      "8-",
+      "8",
+      "8+",
+      "8+/9-",
+      "9-",
+      "9",
+      "9+",
+      "9+/10-",
+      "10-",
+      "10",
+      "10+",
+      "10+/11-",
+      "11-",
+      "11",
+      "11+",
+      "11+/12-",
+      "12-",
+      "12"
+     ]
+    },
+    {
+     "key": "grade_wi",
+     "label": "Grade (ice)",
+     "type": "choice",
+     "choices": [
+      "WI1",
+      "WI2",
+      "WI3",
+      "WI3+",
+      "WI4",
+      "WI4+",
+      "WI5",
+      "WI5+",
+      "WI6",
+      "WI6+",
+      "WI7"
+     ]
+    },
+    {
+     "key": "grade_m",
+     "label": "Grade (mixed)",
+     "type": "choice",
+     "choices": [
+      "M1",
+      "M2",
+      "M3",
+      "M3+",
+      "M4-",
+      "M4",
+      "M4+",
+      "M5-",
+      "M5",
+      "M5+",
+      "M6-",
+      "M6",
+      "M6+",
+      "M7-",
+      "M7",
+      "M7+",
+      "M8-",
+      "M8",
+      "M8+",
+      "M9-",
+      "M9",
+      "M9+",
+      "M10-",
+      "M10",
+      "M10+",
+      "M11-",
+      "M11",
+      "M11+",
+      "M12-",
+      "M12",
+      "M12+",
+      "M13-",
+      "M13",
+      "M13+",
+      "M14-",
+      "M14"
+     ]
+    },
+    {
+     "key": "style",
+     "label": "Style",
+     "type": "choice",
+     "choices": [
+      "onsight",
+      "rotpunkt",
+      "A0",
+      "A1",
+      "A2",
+      "A3",
+      "A4"
+     ]
+    },
+    {
+     "key": "orientation",
+     "label": "Orientation",
+     "type": "choice",
+     "choices": [
+      "N",
+      "NO",
+      "O",
+      "SO",
+      "S",
+      "SW",
+      "W",
+      "NW"
+     ]
+    },
+    {
+     "key": "meters",
+     "label": "Climbing meters",
+     "type": "int",
+     "maximum": 100000,
+     "minimum": 0,
+     "step": 50,
+     "suffix": "m"
+    },
+    {
+     "key": "pitches",
+     "label": "Pitches",
+     "type": "int",
+     "maximum": 200,
+     "minimum": 0,
+     "step": 1
+    },
+    {
+     "key": "climbing_time",
+     "label": "Climbing time",
+     "type": "time"
+    },
+    {
+     "key": "rating",
+     "label": "Rating",
+     "type": "rating",
+     "maximum": 100000,
+     "minimum": 0,
+     "step": 1
+    },
+    {
+     "key": "first_ascent",
+     "label": "First ascent",
+     "type": "bool"
+    },
+    {
+     "key": "gps",
+     "label": "GPS position",
+     "type": "gps"
+    },
+    {
+     "key": "partner",
+     "label": "Partner",
+     "type": "partners"
+    },
+    {
+     "key": "info",
+     "label": "Notes",
+     "type": "multiline"
+    }
+   ],
+   "cascade": {
+    "chain": [
+     "country",
+     "region",
+     "range",
+     "mountain"
+    ],
+    "pools": {
+     "country": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "region": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "range": {
+      "kinds": [
+       "alpine_climbs",
+       "mountain_tours",
+       "paragliding"
+      ],
+      "catalogs": [
+       "mountains"
+      ]
+     },
+     "mountain": {
+      "kinds": [
+       "alpine_climbs",
+       "mountain_tours",
+       "paragliding"
+      ],
+      "catalogs": [
+       "mountains"
+      ]
+     }
+    }
+   }
+  },
+  "mountain_tours": {
+   "label": "Mountain tour",
+   "plural": "Mountain tours",
+   "color": "#5a46c8",
+   "fields": [
+    {
+     "key": "date",
+     "label": "Date",
+     "type": "date",
+     "required": true
+    },
+    {
+     "key": "date_to",
+     "label": "Until",
+     "type": "date"
+    },
+    {
+     "key": "country",
+     "label": "Country",
+     "type": "choice"
+    },
+    {
+     "key": "region",
+     "label": "Region",
+     "type": "choice"
+    },
+    {
+     "key": "range",
+     "label": "Mountain range",
+     "type": "choice"
+    },
+    {
+     "key": "mountain",
+     "label": "Mountain",
+     "type": "choice"
+    },
+    {
+     "key": "name",
+     "label": "Tour / summit",
+     "type": "text",
+     "required": true
+    },
+    {
+     "key": "type",
+     "label": "Type",
+     "type": "choice",
+     "choices": [
+      "Wanderung",
+      "Hochtour",
+      "Skitour"
+     ]
+    },
+    {
+     "key": "start",
+     "label": "Trailhead",
+     "type": "choice"
+    },
+    {
+     "key": "elevation_gain",
+     "label": "Elevation gain",
+     "type": "int",
+     "maximum": 100000,
+     "minimum": 0,
+     "step": 50,
+     "suffix": "Hm"
+    },
+    {
+     "key": "elevation",
+     "label": "Summit elevation",
+     "type": "int",
+     "maximum": 9000,
+     "minimum": 0,
+     "step": 50,
+     "suffix": "m"
+    },
+    {
+     "key": "duration",
+     "label": "Duration",
+     "type": "time"
+    },
+    {
+     "key": "gps",
+     "label": "GPS position",
+     "type": "gps"
+    },
+    {
+     "key": "partner",
+     "label": "Partner",
+     "type": "partners"
+    },
+    {
+     "key": "info",
+     "label": "Notes",
+     "type": "multiline"
+    }
+   ],
+   "cascade": {
+    "chain": [
+     "country",
+     "region",
+     "range",
+     "mountain"
+    ],
+    "pools": {
+     "country": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "region": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "range": {
+      "kinds": [
+       "alpine_climbs",
+       "mountain_tours",
+       "paragliding"
+      ],
+      "catalogs": [
+       "mountains"
+      ]
+     },
+     "mountain": {
+      "kinds": [
+       "alpine_climbs",
+       "mountain_tours",
+       "paragliding"
+      ],
+      "catalogs": [
+       "mountains"
+      ]
+     }
+    }
+   }
+  },
+  "training_sessions": {
+   "label": "Training",
+   "plural": "Training",
+   "color": "#f07a2a",
+   "fields": [
+    {
+     "key": "date",
+     "label": "Date",
+     "type": "date",
+     "required": true
+    },
+    {
+     "key": "country",
+     "label": "Country",
+     "type": "choice"
+    },
+    {
+     "key": "region",
+     "label": "Region",
+     "type": "choice"
+    },
+    {
+     "key": "place",
+     "label": "Place",
+     "type": "choice",
+     "required": true
+    },
+    {
+     "key": "gym",
+     "label": "Gym",
+     "type": "choice"
+    },
+    {
+     "key": "phase",
+     "label": "Training phase",
+     "type": "choice",
+     "choices": [
+      "Basis",
+      "Aufbau",
+      "Maximalkraft",
+      "Schnellkraft",
+      "Kraftausdauer",
+      "Ausdauer",
+      "Ausgleich"
+     ]
+    },
+    {
+     "key": "partner",
+     "label": "Partner",
+     "type": "partners"
+    },
+    {
+     "key": "info",
+     "label": "Notes",
+     "type": "multiline"
+    },
+    {
+     "key": "details",
+     "label": "Exercises",
+     "type": "list",
+     "sub": [
+      {
+       "key": "discipline",
+       "label": "Discipline",
+       "type": "choice",
+       "choices": [
+        "Boulder",
+        "Lead",
+        "Kraft",
+        "Fitness",
+        "Dehnen"
+       ]
+      },
+      {
+       "key": "method",
+       "label": "Method",
+       "type": "choice"
+      },
+      {
+       "key": "hold",
+       "label": "Device / hold",
+       "type": "choice"
+      },
+      {
+       "key": "duration",
+       "label": "Duration",
+       "type": "int",
+       "maximum": 10000,
+       "minimum": 0,
+       "step": 1,
+       "suffix": "min"
+      },
+      {
+       "key": "distance",
+       "label": "Distance / height",
+       "type": "int",
+       "maximum": 1000000,
+       "minimum": 0,
+       "step": 1,
+       "suffix": "m"
+      },
+      {
+       "key": "rest",
+       "label": "Rest",
+       "type": "int",
+       "maximum": 100000,
+       "minimum": 0,
+       "step": 1,
+       "suffix": "s"
+      },
+      {
+       "key": "repetitions",
+       "label": "Repetitions",
+       "type": "int",
+       "maximum": 100000,
+       "minimum": 0,
+       "step": 1
+      },
+      {
+       "key": "mode",
+       "label": "Sets measured in",
+       "type": "choice",
+       "choices": [
+        "Wiederholung",
+        "Zeit"
+       ]
+      },
+      {
+       "key": "info",
+       "label": "Info",
+       "type": "multiline"
+      },
+      {
+       "key": "sets",
+       "label": "Sets",
+       "type": "list",
+       "sub": [
+        {
+         "key": "load",
+         "label": "Reps or seconds",
+         "type": "int",
+         "maximum": 100000,
+         "minimum": 0,
+         "step": 1
+        },
+        {
+         "key": "weight",
+         "label": "Extra weight",
+         "type": "float",
+         "maximum": 500,
+         "minimum": -500,
+         "step": 1,
+         "decimals": 1,
+         "suffix": "kg"
+        },
+        {
+         "key": "side",
+         "label": "Side",
+         "type": "choice",
+         "choices": [
+          "Beidarmig",
+          "Links",
+          "Rechts"
+         ]
+        }
+       ],
+       "item_label": "Set",
+       "columns": [
+        "load",
+        "weight",
+        "side"
+       ]
+      }
+     ],
+     "item_label": "Exercise",
+     "columns": [
+      "discipline",
+      "method",
+      "hold",
+      "duration",
+      "repetitions",
+      "sets"
+     ]
+    }
+   ],
+   "cascade": {
+    "chain": [
+     "country",
+     "region",
+     "place",
+     "gym"
+    ],
+    "pools": {
+     "country": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "region": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "place": {
+      "kinds": [
+       "training_sessions"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "gym": {
+      "kinds": [
+       "training_sessions"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     }
+    }
+   }
+  },
+  "cycling": {
+   "label": "Cycling",
+   "plural": "Cycling",
+   "color": "#008300",
+   "fields": [
+    {
+     "key": "date",
+     "label": "Date",
+     "type": "date",
+     "required": true
+    },
+    {
+     "key": "date_to",
+     "label": "Until",
+     "type": "date"
+    },
+    {
+     "key": "country",
+     "label": "Country",
+     "type": "choice"
+    },
+    {
+     "key": "region",
+     "label": "Region",
+     "type": "choice"
+    },
+    {
+     "key": "name",
+     "label": "Route / tour",
+     "type": "choice"
+    },
+    {
+     "key": "type",
+     "label": "Bike",
+     "type": "choice",
+     "choices": [
+      "Rennrad",
+      "Mountainbike",
+      "Gravel",
+      "E-Bike",
+      "Indoor"
+     ]
+    },
+    {
+     "key": "duration",
+     "label": "Duration",
+     "type": "int",
+     "maximum": 100000,
+     "minimum": 0,
+     "step": 1,
+     "suffix": "min"
+    },
+    {
+     "key": "distance",
+     "label": "Distance",
+     "type": "float",
+     "maximum": 10000,
+     "minimum": 0,
+     "step": 1,
+     "decimals": 1,
+     "suffix": "km"
+    },
+    {
+     "key": "elevation_gain",
+     "label": "Elevation gain",
+     "type": "int",
+     "maximum": 100000,
+     "minimum": 0,
+     "step": 50,
+     "suffix": "Hm"
+    },
+    {
+     "key": "gps",
+     "label": "GPS position",
+     "type": "gps"
+    },
+    {
+     "key": "partner",
+     "label": "Partner",
+     "type": "partners"
+    },
+    {
+     "key": "info",
+     "label": "Notes",
+     "type": "multiline"
+    }
+   ],
+   "cascade": {
+    "chain": [
+     "country",
+     "region"
+    ],
+    "pools": {
+     "country": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "region": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     }
+    }
+   }
+  },
+  "paragliding": {
+   "label": "Paragliding",
+   "plural": "Paragliding",
+   "color": "#b03fd0",
+   "fields": [
+    {
+     "key": "date",
+     "label": "Date",
+     "type": "date",
+     "required": true
+    },
+    {
+     "key": "date_to",
+     "label": "Until",
+     "type": "date"
+    },
+    {
+     "key": "country",
+     "label": "Country",
+     "type": "choice"
+    },
+    {
+     "key": "region",
+     "label": "Region",
+     "type": "choice"
+    },
+    {
+     "key": "type",
+     "label": "Type",
+     "type": "choice",
+     "choices": [
+      "Training",
+      "Hike & Fly",
+      "Cross Country"
+     ]
+    },
+    {
+     "key": "range",
+     "label": "Mountain range",
+     "type": "choice"
+    },
+    {
+     "key": "mountain",
+     "label": "Mountain",
+     "type": "choice"
+    },
+    {
+     "key": "site",
+     "label": "Launch site",
+     "type": "choice"
+    },
+    {
+     "key": "landing",
+     "label": "Landing site",
+     "type": "choice"
+    },
+    {
+     "key": "glider",
+     "label": "Wing",
+     "type": "choice"
+    },
+    {
+     "key": "harness",
+     "label": "Harness",
+     "type": "choice"
+    },
+    {
+     "key": "gps",
+     "label": "GPS position",
+     "type": "gps"
+    },
+    {
+     "key": "partner",
+     "label": "Partner",
+     "type": "partners"
+    },
+    {
+     "key": "info",
+     "label": "Notes",
+     "type": "multiline"
+    },
+    {
+     "key": "flights",
+     "label": "Flights",
+     "type": "list",
+     "sub": [
+      {
+       "key": "airtime",
+       "label": "Airtime",
+       "type": "int",
+       "maximum": 100000,
+       "minimum": 0,
+       "step": 1,
+       "suffix": "min"
+      },
+      {
+       "key": "distance",
+       "label": "Distance",
+       "type": "float",
+       "maximum": 1000,
+       "minimum": 0,
+       "step": 1,
+       "decimals": 1,
+       "suffix": "km"
+      },
+      {
+       "key": "max_altitude",
+       "label": "Max. altitude",
+       "type": "int",
+       "maximum": 9000,
+       "minimum": 0,
+       "step": 50,
+       "suffix": "m"
+      },
+      {
+       "key": "altitude_gain",
+       "label": "Elevation gain",
+       "type": "int",
+       "maximum": 9000,
+       "minimum": 0,
+       "step": 50,
+       "suffix": "m"
+      },
+      {
+       "key": "maneuvers",
+       "label": "Maneuvers",
+       "type": "multichoice"
+      },
+      {
+       "key": "info",
+       "label": "Info",
+       "type": "multiline"
+      }
+     ],
+     "item_label": "Flight",
+     "columns": [
+      "airtime",
+      "distance",
+      "max_altitude",
+      "altitude_gain",
+      "maneuvers"
+     ]
+    }
+   ],
+   "cascade": {
+    "chain": [
+     "country",
+     "region",
+     "range",
+     "mountain"
+    ],
+    "pools": {
+     "country": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "region": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "range": {
+      "kinds": [
+       "alpine_climbs",
+       "mountain_tours",
+       "paragliding"
+      ],
+      "catalogs": [
+       "mountains"
+      ]
+     },
+     "mountain": {
+      "kinds": [
+       "alpine_climbs",
+       "mountain_tours",
+       "paragliding"
+      ],
+      "catalogs": [
+       "mountains"
+      ]
+     }
+    }
+   }
+  },
+  "trips": {
+   "label": "Trip",
+   "plural": "Trips",
+   "color": "#0fb5ae",
+   "fields": [
+    {
+     "key": "date",
+     "label": "From",
+     "type": "date",
+     "required": true
+    },
+    {
+     "key": "date_to",
+     "label": "Until",
+     "type": "date"
+    },
+    {
+     "key": "country",
+     "label": "Country",
+     "type": "choice"
+    },
+    {
+     "key": "region",
+     "label": "Region",
+     "type": "choice"
+    },
+    {
+     "key": "destination",
+     "label": "Destination",
+     "type": "text",
+     "required": true
+    },
+    {
+     "key": "type",
+     "label": "Type",
+     "type": "choice",
+     "choices": [
+      "Mehrtagesausflug",
+      "Kletterreise",
+      "Expedition"
+     ]
+    },
+    {
+     "key": "gps",
+     "label": "GPS position",
+     "type": "gps"
+    },
+    {
+     "key": "partner",
+     "label": "Partner",
+     "type": "partners"
+    },
+    {
+     "key": "info",
+     "label": "Notes",
+     "type": "multiline"
+    }
+   ],
+   "cascade": {
+    "chain": [
+     "country",
+     "region"
+    ],
+    "pools": {
+     "country": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "region": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     }
+    }
+   }
+  },
+  "competitions": {
+   "label": "Competition",
+   "plural": "Competitions",
+   "color": "#f2b705",
+   "fields": [
+    {
+     "key": "date",
+     "label": "Date",
+     "type": "date",
+     "required": true
+    },
+    {
+     "key": "date_to",
+     "label": "Until",
+     "type": "date"
+    },
+    {
+     "key": "country",
+     "label": "Country",
+     "type": "choice"
+    },
+    {
+     "key": "region",
+     "label": "Region",
+     "type": "choice"
+    },
+    {
+     "key": "gym",
+     "label": "Venue",
+     "type": "choice",
+     "required": true
+    },
+    {
+     "key": "level",
+     "label": "Level",
+     "type": "choice",
+     "choices": [
+      "Juniorcup",
+      "ItaMeisterschaften",
+      "Italiencup",
+      "JustForFun"
+     ]
+    },
+    {
+     "key": "discipline",
+     "label": "Discipline",
+     "type": "choice",
+     "choices": [
+      "Boulder",
+      "Seilklettern",
+      "Speed",
+      "Combined"
+     ]
+    },
+    {
+     "key": "result",
+     "label": "Result (rank)",
+     "type": "int",
+     "maximum": 1000,
+     "minimum": 0,
+     "step": 1
+    },
+    {
+     "key": "gps",
+     "label": "GPS position",
+     "type": "gps"
+    },
+    {
+     "key": "info",
+     "label": "Notes",
+     "type": "multiline"
+    }
+   ],
+   "cascade": {
+    "chain": [
+     "country",
+     "region"
+    ],
+    "pools": {
+     "country": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     },
+     "region": {
+      "kinds": [
+       "alpine_climbs",
+       "climbing_days",
+       "competitions",
+       "cycling",
+       "mountain_tours",
+       "paragliding",
+       "sport_routes",
+       "training_sessions",
+       "trips"
+      ],
+      "catalogs": [
+       "climbing",
+       "mountains"
+      ]
+     }
+    }
+   }
+  },
+  "body_metrics": {
+   "label": "Body weight",
+   "plural": "Body",
+   "color": "#7a7a72",
+   "fields": [
+    {
+     "key": "date",
+     "label": "Date",
+     "type": "date",
+     "required": true
+    },
+    {
+     "key": "weight",
+     "label": "Weight",
+     "type": "float",
+     "required": true,
+     "maximum": 300,
+     "minimum": 0,
+     "step": 1,
+     "decimals": 1,
+     "suffix": "kg"
+    },
+    {
+     "key": "info",
+     "label": "Notes",
+     "type": "text"
+    }
+   ]
+  },
+  "notes": {
+   "label": "Note",
+   "plural": "Notes",
+   "color": "#898781",
+   "fields": [
+    {
+     "key": "date",
+     "label": "Date",
+     "type": "date",
+     "required": true
+    },
+    {
+     "key": "date_to",
+     "label": "Until",
+     "type": "date"
+    },
+    {
+     "key": "text",
+     "label": "Note",
+     "type": "multiline",
+     "required": true
+    }
+   ]
+  }
+ },
+ "grades": {
+  "french": [
+   "5a",
+   "5a+",
+   "5b",
+   "5b+",
+   "5c",
+   "5c+",
+   "6a",
+   "6a+",
+   "6b",
+   "6b+",
+   "6c",
+   "6c+",
+   "7a",
+   "7a+",
+   "7b",
+   "7b+",
+   "7c",
+   "7c+",
+   "8a",
+   "8a+",
+   "8b",
+   "8b+",
+   "8c",
+   "8c+",
+   "9a",
+   "9a+",
+   "9b",
+   "9b+",
+   "9c"
+  ],
+  "uiaa": [
+   "3",
+   "3+",
+   "3+/4-",
+   "4-",
+   "4",
+   "4+",
+   "4+/5-",
+   "5-",
+   "5",
+   "5+",
+   "5+/6-",
+   "6-",
+   "6",
+   "6+",
+   "6+/7-",
+   "7-",
+   "7",
+   "7+",
+   "7+/8-",
+   "8-",
+   "8",
+   "8+",
+   "8+/9-",
+   "9-",
+   "9",
+   "9+",
+   "9+/10-",
+   "10-",
+   "10",
+   "10+",
+   "10+/11-",
+   "11-",
+   "11",
+   "11+",
+   "11+/12-",
+   "12-",
+   "12"
+  ]
+ }
+}
